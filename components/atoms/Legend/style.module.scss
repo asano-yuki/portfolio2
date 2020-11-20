@@ -1,0 +1,26 @@
+@import "../../../styles/properties";
+
+.item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  &:not(:last-child) {
+    padding-bottom: 0.1rem;
+  }
+}
+
+.color {
+  width: 30px;
+  height: 10px;
+  border: 1px solid $borderColor;
+}
+
+.title {
+  padding-left: 0.1rem;
+}
+
+.text {
+  width: 100%;
+  padding-top: 0.03rem;
+  font-size: 0.105rem;
+}

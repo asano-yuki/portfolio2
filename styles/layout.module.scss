@@ -1,0 +1,80 @@
+@import "./properties";
+
+.header {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  height: 100%;
+  background-color: $mainColor;
+  box-shadow: 3px 0 5px #bebebe77;
+  z-index: 9;
+  @include tab {
+    display: none;
+  }
+}
+
+.header_bottom {
+  display: none;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  box-shadow: 0 -5px 5px #bebebe77;
+  @include tab {
+    display: block;
+  }
+}
+
+.title {
+  position: fixed;
+  height: 40px;
+  top: 0;
+  background-color: #fff;
+  border-bottom: 1px solid #e4e4e4;
+  z-index: 10;
+  &__open {
+    width: calc(100% - 150px);
+    left: 150px;
+  }
+  &__close {
+    width: calc(100% - 42px);
+    left: 42px;
+  }
+  @include tab {
+    width: 100%;
+    left: 0;
+    background-color: $mainColor;
+  }
+}
+
+.contents {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: $pc-lg;
+  min-width: $pc-md;
+  margin: 0 auto;
+  padding: 0.7rem 0.35rem 0.35rem 1.9rem;
+  &__open {
+    padding-left: 190px;
+  }
+  &__close {
+    padding-left: 80px;
+  }
+  @include tab {
+    min-width: $sp-min;
+    width: 100%;
+    padding: 0.8rem 0.3rem 0.2rem 0.3rem;
+  }
+}
+
+.footer {
+  max-width: $pc-lg;
+  width: 100%;
+  padding: 0.25rem 0 0 0;
+  text-align: right;
+  @include tab {
+    padding-bottom: 0.4rem;
+  }
+}

@@ -1,0 +1,28 @@
+@import "../../../styles/properties";
+
+.root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__vertical {
+    flex-direction: column;
+    svg {
+      margin-right: 0;
+      padding-bottom: 2px;
+    }
+  }
+}
+
+.title {
+  font-size: 0.1rem;
+  font-weight: bold;
+  @include sp {
+    font-size: 0.08rem;
+  }
+}
+
+.icon {
+  width: 15px !important;
+  height: 15px !important;
+  margin-right: 10px;
+}
