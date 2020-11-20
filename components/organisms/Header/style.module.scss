@@ -1,0 +1,26 @@
+@import "../../../styles/properties";
+
+.root {
+  &__open {
+    width: 150px;
+    @include tab {
+      width: 100%;
+    }
+  }
+  &__close {
+    width: 41.5px;
+    @include tab {
+      display: none;
+    }
+  }
+}
+
+.arrow_button {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0.1rem 0.1rem 0.075rem 0.1rem;
+  background: $mainColor;
+  @include tab {
+    display: none;
+  }
+}

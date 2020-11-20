@@ -1,0 +1,13 @@
+@import "../../../styles/properties";
+
+.root {
+  width: calc(100% - 60px);
+  padding-left: 20px;
+  text-align: left;
+}
+
+.text {
+  margin-top: 5px;
+  line-height: 0.2rem;
+  word-break: break-all;
+}
