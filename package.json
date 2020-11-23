@@ -16,6 +16,8 @@
     "@fortawesome/react-fontawesome": "^0.1.12",
     "axios": "^0.21.0",
     "chart.js": "^2.9.4",
+    "gridjs": "^3.0.2",
+    "gridjs-react": "^3.0.2",
     "next": "10.0.1",
     "react": "17.0.1",
     "react-dom": "17.0.1",

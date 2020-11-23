@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Head from 'next/head'
 import Header from 'components/organisms/Header'
 import MainTitle from 'components/molecules/MainTitle'
 import Copyright from 'components/atoms/Copyright'
@@ -18,7 +19,10 @@ const Layout: React.FC<Props> = ({
   // ナビゲーションメニューの開閉フラグを管理
   const [openState, setOpenState] = useState<boolean>(true)
   return (
-    <div>
+    <>
+      <Head>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <div className={styles.header}>
         <Header openState={openState} setOpenState={setOpenState} />
       </div>
@@ -37,7 +41,10 @@ const Layout: React.FC<Props> = ({
           <Copyright />
         </footer>
       </div>
-    </div>
+      <div className={styles.header_bottom}>
+        <Header openState={true} setOpenState={setOpenState} isVertical={true} />
+      </div>
+    </>
   )
 }
 

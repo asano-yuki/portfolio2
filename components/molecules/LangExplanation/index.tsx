@@ -4,29 +4,31 @@ import styles from './style.module.scss'
 
 export interface Props {
   items : {
-    Image           : JSX.Element
-    LangExplanation : JSX.Element
+    Image      : JSX.Element
+    TitledText : JSX.Element
   }[]
 }
 
 /**
  * サムネイル付き言語解説リスト
  */
-const LangExplanationWithThumbnails: React.FC<Props> = ({
+const LangExplanation: React.FC<Props> = ({
   items
 }: Props) => {
   const _items: React.ReactNode = items.map((item, i) => {
-    const { Image, LangExplanation } = item
+    const { Image, TitledText } = item
     return (
       <li key={i} className={styles.item}>
         <div className={styles.thumbnail}>
           {Image}
         </div>
-        { LangExplanation }
+        <div className={styles.titled_text}>
+          { TitledText }
+        </div>
       </li>
     )
   })
   return <ul className={styles.root}>{_items}</ul>
 }
 
-export default LangExplanationWithThumbnails
+export default LangExplanation

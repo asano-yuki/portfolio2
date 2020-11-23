@@ -1,0 +1,63 @@
+@import "../../../styles/properties";
+
+.root {
+  display: flex;
+  @include tab {
+    flex-direction: column;
+  }
+}
+
+.item {
+  padding: 0 30px;
+  @include tab {
+    padding: 15px 0;
+  }
+  &:first-child {
+    padding-left: 0;
+    @include tab {
+      padding-top: 0;
+    }
+  }
+  &:last-child {
+    padding-right: 0;
+    @include tab {
+      padding-bottom: 0;
+    }
+  }
+  &:not(:last-child) {
+    border-right: 1px solid $borderColor;
+    @include tab {
+      border-right: none;
+      border-bottom: 1px solid $borderColor;
+    }
+  }
+}
+
+.outer {
+  display: flex;
+  align-items: center;
+  @include tab {
+    max-width: 350px;
+    margin: 0 auto;
+  }
+}
+
+.icon {
+  width: 50px !important;
+  height: 50px;
+  opacity: 0.4;
+  &__field {
+    color: $subColorRed;
+  }
+  &__tech {
+    color: $subColorYellow;
+    opacity: 0.8;
+  }
+  &__work {
+    color: $subColorBlue;
+  }
+}
+
+.body {
+  padding-left: 20px;
+}

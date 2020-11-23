@@ -1,0 +1,40 @@
+@import "../../../styles/properties";
+
+$height: 20px;
+
+.bar {
+  width: 100%;
+  height: $height - 1px;
+  background-color: #ececec;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.meter {
+  width: inherit;
+  height: $height;
+}
+
+.scale {
+  display: flex;
+  justify-content: space-between;
+}
+
+.label {
+  position: relative;
+  padding-top: 3px;
+  padding-left: 10px;
+  font-size: 0.105rem;
+  &:not(:first-child):not(:last-child) {
+    &::after {
+      position: absolute;
+      content: "";
+      display: block;
+      width: 0.5px;
+      height: 19px;
+      top: -19px;
+      left: 53%;
+      background-color: #fff;
+    }
+  }
+}
