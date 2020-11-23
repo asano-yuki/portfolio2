@@ -42,7 +42,7 @@ const useNavMenu = (): Props => {
       {
         key  : 'contact',
         path : '/contact',
-        text : '実務経験',
+        text : 'お問い合わせ',
         Icon : faEnvelope,
       }
     ]

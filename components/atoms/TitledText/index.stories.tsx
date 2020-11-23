@@ -1,13 +1,13 @@
 import React from 'react'
 import { Story, Meta } from '@storybook/react/types-6-0'
-import LangExplanation, { Props } from './index'
+import TitledText, { Props } from './index'
 
 export default {
-  title     : 'Atoms/LangExplanation',
-  component : LangExplanation,
+  title     : 'Atoms/TitledText',
+  component : TitledText,
 } as Meta
 
-const Template: Story<Props> = args => <LangExplanation {...args} />
+const Template: Story<Props> = args => <TitledText {...args} />
 
 export const Sample = Template.bind({})
 Sample.args = {

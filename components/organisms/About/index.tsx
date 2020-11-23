@@ -1,8 +1,8 @@
 import React from 'react'
 import { faPencilAlt, faToolbox } from '@fortawesome/free-solid-svg-icons'
-import LangExplanation from '../../atoms/LangExplanation'
+import TitledText from '../../atoms/TitledText'
 import IconTitle from '../../atoms/IconTitle'
-import LangExplanationWithThumbnails from '../../molecules/LangExplanationWithThumbnails'
+import LangExplanation from '../../molecules/LangExplanation'
 
 import styles from './style.module.scss'
 
@@ -13,12 +13,12 @@ const About: React.FC = () => {
   // 画像要素、LangExplanationコンポーネントのパラメータ定義
   const params = [
     {
-      Image : <img src='img/scss.svg' width='100%' alt='SCSSのロゴ画像' />,
+      Image : <img src='img/scss.svg' width='90%' alt='SCSSのロゴ画像' />,
       title : 'SCSS',
       text  : 'CSS設計として「CSS Modules + BEM」を採用することで、ローカルスコープの確保と煩雑になりやすいソースコードの保守性を向上。',
     },
     {
-      Image : <img src='img/react.svg' width='100%' alt='Reactのロゴ画像' />,
+      Image : <img src='img/react.svg' width='90%' alt='Reactのロゴ画像' />,
       title : 'React',
       text  : '関数コンポーネントのHooksAPIを導入。デザインシステムにAtomicDesignを取り入れて、疎結合で再利用性の高いコンポーネントを構築。',
     },
@@ -43,7 +43,7 @@ const About: React.FC = () => {
       text  : '独立したコンポーネントの開発、UIテストを目的に採用。',
     },
     {
-      Image : <img src='img/cms.svg' width='100%' alt='CMSのロゴ画像' />,
+      Image : <img src='img/cms.svg' width='90%' alt='CMSのロゴ画像' />,
       title : 'microCMS',
       text  : 'プロフィール、スキル、実務経験等の各種コンテンツの管理とページレイアウトの自由度を確保するために、APIベースのヘッドレスCMSを採用。',
     }
@@ -58,8 +58,8 @@ const About: React.FC = () => {
     const borderTop: string = i > 1 ? '1px solid #e0e0e0' : 'none'
     return {
       Image,
-      LangExplanation : <LangExplanation {...langParams} />,
-      style           : { padding: '40px 0', borderTop }
+      TitledText : <TitledText {...langParams} />,
+      style      : { padding: '40px 0', borderTop }
     }
   })
 
@@ -87,7 +87,7 @@ const About: React.FC = () => {
         <div className={styles.icon_title}>
           <IconTitle {...iconTitleParams[1]} />
         </div>
-        <LangExplanationWithThumbnails items={items} />
+        <LangExplanation items={items} />
       </section>
     </div>
   )

@@ -10,7 +10,7 @@ export interface Props {
 /**
  * 言語解説コンポーネントの構築
  */
-const LangExplanation: React.FC<Props> = ({
+const TitledText: React.FC<Props> = ({
   title,
   text
 }: Props) => {
@@ -22,4 +22,4 @@ const LangExplanation: React.FC<Props> = ({
   )
 }
 
-export default LangExplanation
+export default TitledText
