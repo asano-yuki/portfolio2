@@ -22,24 +22,30 @@ const SkillGroup: React.FC<Props> = ({
     // 1レコードに表示する各セル項目を構築
     return (
       <GroupList key={i}>
-        <GroupItem item={name} />
-        <GroupItem item={
-          <ProgressBar key={i} {...{
-            max        : 4,
-            height     : 10,
-            val        : year,
-            labels     : ['', '1年', '2年', '3年', ''],
-            background : '#fd6f90aa'
-          }} />}
+        <GroupItem item={name} style={{ padding: '10px' }} />
+        <GroupItem
+          item={
+            <ProgressBar key={i} {...{
+              max        : 4,
+              height     : 10,
+              val        : year,
+              labels     : ['', '1年', '2年', '3年', ''],
+              background : '#fd6f90aa'
+            }}/>
+          }
+          style={{ padding: '0 20px 10px' }}
         />
-        <GroupItem item={
-          <ProgressBar key={i} {...{
-            max        : 10,
-            height     : 10,
-            val        : level,
-            labels     : ['', '初心者', '', '中級者', '', '上級者', ''],
-            background : '#3a90b8aa'
-          }} />}
+        <GroupItem
+          item={
+            <ProgressBar key={i} {...{
+              max        : 10,
+              height     : 10,
+              val        : level,
+              labels     : ['', '初心者', '', '中級者', '', '上級者', ''],
+              background : '#3a90b8aa'
+            }}/>
+          }
+          style={{ padding: '0 20px 10px' }}
         />
       </GroupList>
     )

@@ -2,7 +2,7 @@ import React from 'react'
 
 export interface Props {
   item   : string | React.ReactNode
-  width? : string | number
+  style? : React.CSSProperties
 }
 
 /**
@@ -10,9 +10,9 @@ export interface Props {
  */
 const GroupItem: React.FC<Props> = ({
   item,
-  width = '100%',
+  style = { width: '100%' }
 }: Props) => (
-  <li style={{ width }}>{item}</li>
+  <li style={style}>{item}</li>
 )
 
 export default GroupItem

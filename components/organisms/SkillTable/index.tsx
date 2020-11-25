@@ -55,8 +55,9 @@ const SkillTable: React.FC<Props> = ({
         'カテゴリー',
         'サブカテゴリー',
         {
-          name : '経験年数',
-          sort : {
+          name  : '経験年数',
+          width : '160px',
+          sort  : {
             compare : (a: JSX.Element, b: JSX.Element) => {
               const aVal = a.props.element.props.val
               const bVal = b.props.element.props.val
@@ -67,8 +68,9 @@ const SkillTable: React.FC<Props> = ({
           }
         },
         {
-          name : 'スキルレベル',
-          sort : {
+          name  : 'スキルレベル',
+          width : '160px',
+          sort  : {
             compare : (a: JSX.Element, b: JSX.Element) => {
               const aVal = a.props.element.props.val
               const bVal = b.props.element.props.val

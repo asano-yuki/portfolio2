@@ -40,7 +40,7 @@ const Skill: React.FC<Props> = ({
   return (
     <Layout>
       <Head>
-        <title>asan&#39;s portfolio | スキル情報</title>
+        <title>asan&#39;s portfolio | スキル</title>
         <meta name="description" content={`
           Webサイト、Webアプリ開発を中心に活動しているasanです。
           CSS(SCSS)、React、TypeScript、Nextなどの技術スタックを活用して、
