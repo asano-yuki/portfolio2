@@ -17,41 +17,39 @@ const ExtendGrid: React.FC<Props> = ({
   columns,
   isFixedHeader = false,
   height
-}: Props) => {
-  return (
-    <Grid
-      data={data}
-      language={{
-        search : {
-          placeholder : '検索 ...',
-        }
-      }}
-      sort={true}
-      fixedHeader={isFixedHeader}
-      height={height}
-      search={{
-        enabled: true
-      }}
-      columns={columns}
-      style={{
-        container : {
-          color : '#868686'
-        },
-        header : {
-          marginBottom : '20px',
-          padding      : '1px'
-        },
-        td : {
-          textAlign : 'center'
-        },
-        th : {
-          textAlign  : 'center',
-          lineHeight : '24px',
-          zIndex     : 2
-        }
-      }}
-    />
-  )
-}
+}: Props) => (
+  <Grid
+    data={data}
+    language={{
+      search : {
+        placeholder : '検索 ...',
+      }
+    }}
+    sort={true}
+    fixedHeader={isFixedHeader}
+    height={height}
+    search={{
+      enabled: true
+    }}
+    columns={columns}
+    style={{
+      container : {
+        color : '#868686'
+      },
+      header : {
+        marginBottom : '20px',
+        padding      : '1px'
+      },
+      td : {
+        textAlign : 'center'
+      },
+      th : {
+        textAlign  : 'center',
+        lineHeight : '24px',
+        zIndex     : 2
+      }
+    }}
+  />
+)
 
 export default ExtendGrid

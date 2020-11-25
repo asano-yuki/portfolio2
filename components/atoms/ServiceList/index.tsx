@@ -15,7 +15,7 @@ const ServiceList: React.FC = () => {
           target='_blank'
           rel="noreferrer"
         >
-          <img src='img/github.svg' className={styles.img} alt='GitHub' />
+          <img src='/img/github.svg' className={styles.img} alt='GitHub' />
         </a>
       </li>
     </ul>

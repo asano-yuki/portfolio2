@@ -1,0 +1,19 @@
+@import "../../../styles/properties";
+
+.root {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  &:not(:last-child) {
+    border-bottom: 1px solid $borderColor;
+  }
+}
+
+.link {
+  color: $linkColor;
+}
+
+.text {
+  display: inline-block;
+  padding-right: 0.05rem;
+}
