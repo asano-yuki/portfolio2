@@ -10,7 +10,7 @@ const ServiceList: React.FC = () => {
     <ul>
       <li className={styles.item}>
         <a
-          href='https://github.com/asano-yuki/portfolio'
+          href='https://github.com/asano-yuki/portfolio2'
           className={styles.link}
           target='_blank'
           rel="noreferrer"

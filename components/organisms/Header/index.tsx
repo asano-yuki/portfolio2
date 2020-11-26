@@ -11,6 +11,7 @@ const DynamicArrowButton = dynamic(
 )
 
 export interface Props {
+  activePage    : string
   openState     : boolean
   setOpenState? : React.Dispatch<React.SetStateAction<boolean>>,
   isVertical?   : boolean
@@ -22,6 +23,7 @@ export interface Props {
  * ・ナビゲーションメニュ－の開閉機能 ※PCサイズのみ
  */
 const Header: React.FC<Props> = ({
+  activePage,
   openState,
   setOpenState = () => {},
   isVertical = false
@@ -38,7 +40,11 @@ const Header: React.FC<Props> = ({
       <div className={styles.arrow_button}>
         <DynamicArrowButton color='#fff' clickHandler={() => setOpenState(!openState)} />
       </div>
-      <NavMenu items={navInfos} isVertical={isVertical} />
+      <NavMenu
+        items={navInfos}
+        isVertical={isVertical}
+        activeKey={activePage}
+      />
     </header>
   )
 }
