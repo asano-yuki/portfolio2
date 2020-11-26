@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Head from 'next/head'
+import { useRouter } from 'next/router'
 import Header from 'components/organisms/Header'
 import MainTitle from 'components/molecules/MainTitle'
 import Copyright from 'components/atoms/Copyright'
@@ -18,13 +19,20 @@ const Layout: React.FC<Props> = ({
 }: Props) => {
   // ナビゲーションメニューの開閉フラグを管理
   const [openState, setOpenState] = useState<boolean>(true)
+  // 現在表示しているページ(パス)を取得
+  const router     = useRouter()
+  const activePage = router.pathname.split('/')[1] || 'top'
   return (
     <>
       <Head>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className={styles.header}>
-        <Header openState={openState} setOpenState={setOpenState} />
+        <Header
+          activePage={activePage}
+          openState={openState}
+          setOpenState={setOpenState}
+        />
       </div>
       <div className={`
         ${styles.title}
@@ -42,7 +50,12 @@ const Layout: React.FC<Props> = ({
         </footer>
       </div>
       <div className={styles.header_bottom}>
-        <Header openState={true} setOpenState={setOpenState} isVertical={true} />
+        <Header
+          activePage={activePage}
+          openState={true}
+          setOpenState={setOpenState}
+          isVertical={true}
+        />
       </div>
     </>
   )
