@@ -2,6 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome'
 import { faChevronCircleRight } from '@fortawesome/free-solid-svg-icons'
+import Structure from '../../atoms/Structure'
 import GroupItem from '../../atoms/GroupItem'
 import GroupList from '../../molecules/GroupList'
 import useMakeDate from '../../../custom/use-make-date'
@@ -23,7 +24,7 @@ const ExperienceGroup: React.FC<Props> = ({
 }: Props) => {
   const { getDatePeriod } = useMakeDate()
   return (
-    <>
+    <Structure title='実務経験一覧'>
       <GroupList isHead={true}>
         <GroupItem item='期 間' />
         <GroupItem item='概 要' />
@@ -51,7 +52,7 @@ const ExperienceGroup: React.FC<Props> = ({
           )
         })
       }
-    </>
+    </Structure>
   )
 }
 

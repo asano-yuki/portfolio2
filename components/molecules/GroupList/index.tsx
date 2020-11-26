@@ -16,8 +16,8 @@ const GroupList: React.FC<Props> = ({
 }: Props) => (
   <ul className={`
     ${styles.root}
-    ${isHead ? `${styles.root__head}` : ''
-  }`}>
+    ${isHead ? `${styles.root__head}` : ''}`
+  }>
     {children}
   </ul>
 )

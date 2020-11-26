@@ -1,6 +1,7 @@
 @import "../../../styles/properties";
 
 .root {
+  width: 100%;
   text-align: center;
   &:nth-child(odd) {
     background-color: #fcfcfc;
