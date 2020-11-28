@@ -11,10 +11,10 @@ const DynamicArrowButton = dynamic(
 )
 
 export interface Props {
-  activePage    : string
-  openState     : boolean
-  setOpenState? : React.Dispatch<React.SetStateAction<boolean>>,
-  isVertical?   : boolean
+  activePage  : string
+  isOpen      : boolean
+  changeIcon? : () => void,
+  isVertical? : boolean
 }
 
 /**
@@ -24,21 +24,25 @@ export interface Props {
  */
 const Header: React.FC<Props> = ({
   activePage,
-  openState,
-  setOpenState = () => {},
+  isOpen,
+  changeIcon = () => {},
   isVertical = false
 }: Props) => {
   // icon-menuコンポーネントに渡すパラメータ
   const { infos, unTitledInfos } = useNavMenu()
   // ヘッダーがクローズ状態であれば、titleを非表示
-  const navInfos = openState ? infos : unTitledInfos
+  const navInfos = isOpen ? infos : unTitledInfos
   return (
     <header className={`
       ${styles.root}
-      ${openState ? styles.root__open : styles.root__close}
+      ${isOpen ? styles.root__open : styles.root__close}
     `}>
       <div className={styles.arrow_button}>
-        <DynamicArrowButton color='#fff' clickHandler={() => setOpenState(!openState)} />
+        <DynamicArrowButton
+          color='#fff'
+          initDirection={isOpen ? 'left' : 'right'}
+          clickHandler={changeIcon}
+        />
       </div>
       <NavMenu
         items={navInfos}
