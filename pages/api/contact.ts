@@ -9,8 +9,8 @@ interface Contact {
 }
 
 export default async (req: NextApiRequest, res: NextApiResponse): Promise<void> => {
-  const user = process.env['NEXT_PUBLIC_MAIL_ADDRESS']
-  const pass = process.env['NEXT_PUBLIC_MAIL_PASSWORD']
+  const user = process.env['MAIL_ADDRESS']
+  const pass = process.env['MAIL_PASSWORD']
   // トランスポートオブジェクトの定義
   const transporter = nodemailer.createTransport({
     host   : 'smtp.gmail.com',
