@@ -69,9 +69,9 @@ const ArrowButton: React.FC<Props> = ({
   return (
     <SvgButton {...props}>
       <g ref={ref}>
-        <path fill={color}></path>
-        <path fill={color}></path>
-        <path fill={color}></path>
+        <path fill={color} d={defaultArrowParam.top}></path>
+        <path fill={color} d={defaultArrowParam.middle}></path>
+        <path fill={color} d={defaultArrowParam.bottom}></path>
       </g>
     </SvgButton>
   )

@@ -18,6 +18,7 @@
 .arrow_button {
   display: flex;
   justify-content: flex-end;
+  height: 37.5px;
   padding: 0.1rem 0.1rem 0.075rem 0.1rem;
   background: $mainColor;
   @include tab {

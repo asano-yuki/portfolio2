@@ -1,5 +1,5 @@
 import React from 'react'
-import { Formik, Form, Field, FieldProps, ErrorMessage } from 'formik'
+import { Formik, Form, Field, FieldProps, ErrorMessage, FormikBag } from 'formik'
 import * as yup from 'yup'
 import swal from 'sweetalert'
 import axios from 'axios'
@@ -45,7 +45,7 @@ const ContactForm: React.FC = () => {
             .max(500, '500文字以内で入力して下さい。')
         })
       }
-      onSubmit={async (values: ValueProps) => {
+      onSubmit={async (values: ValueProps, formik: any) => {
         swal({
           text                : 'メール送信中',
           icon                : 'info',
@@ -56,8 +56,9 @@ const ContactForm: React.FC = () => {
         const res = await axios.post(`${window.location.origin}/api/contact`, values, { timeout: 10000 })
         // 送信成功・失敗時のアラート
         const isSuccess = res.data.errors ? false : true
-        if (isSuccess) swal({ title: '送信しました!', icon: 'success' })
-        else swal({ title: '送信に失敗しました', icon: 'error' })
+        if (!isSuccess) return swal({ title: '送信に失敗しました', icon: 'error' })
+        swal({ title: '送信しました!', icon: 'success' })
+        formik.resetForm()
       }}
     >
       {
