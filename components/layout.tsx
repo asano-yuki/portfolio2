@@ -29,38 +29,40 @@ const Layout: React.FC<Props> = ({
       <Head>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className={styles.header}>
-        <Header
-          activePage={activePage}
-          isOpen={state.isOpen}
-          changeIcon={() => {
-            state.isOpen ?
-              dispatch(closeMenu()) :
-              dispatch(openMenu())
-          }}
-        />
-      </div>
-      <div className={`
-        ${styles.title}
-        ${state.isOpen ? styles.title__open : styles.title__close}
-      `}>
-        <MainTitle openState={state.isOpen} />
-      </div>
-      <div className={`
-        ${styles.contents}
-        ${state.isOpen ? styles.contents__open : styles.contents__close}
-      `}>
-        { children }
-        <footer className={styles.footer}>
-          <Copyright />
-        </footer>
-      </div>
-      <div className={styles.header_bottom}>
-        <Header
-          activePage={activePage}
-          isOpen={true}
-          isVertical={true}
-        />
+      <div className={styles.wrap}>
+        <div className={styles.header}>
+          <Header
+            activePage={activePage}
+            isOpen={state.isOpen}
+            changeIcon={() => {
+              state.isOpen ?
+                dispatch(closeMenu()) :
+                dispatch(openMenu())
+            }}
+          />
+        </div>
+        <div className={`
+          ${styles.title}
+          ${state.isOpen ? styles.title__open : styles.title__close}
+        `}>
+          <MainTitle openState={state.isOpen} />
+        </div>
+        <div className={`
+          ${styles.contents}
+          ${state.isOpen ? styles.contents__open : styles.contents__close}
+        `}>
+          { children }
+          <footer className={styles.footer}>
+            <Copyright />
+          </footer>
+        </div>
+        <div className={styles.header_bottom}>
+          <Header
+            activePage={activePage}
+            isOpen={true}
+            isVertical={true}
+          />
+        </div>
       </div>
     </>
   )
