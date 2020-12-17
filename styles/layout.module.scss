@@ -1,5 +1,9 @@
 @import "./properties";
 
+.wrap {
+  background: $mainColor;
+}
+
 .header {
   position: fixed;
   display: flex;
@@ -9,6 +13,9 @@
   background-color: $mainColor;
   box-shadow: 3px 0 5px #bebebe77;
   z-index: 9;
+  @include max {
+    left: calc(50% - 740px);
+  }
   @include tab {
     display: none;
   }
@@ -30,7 +37,7 @@
   position: fixed;
   height: 40px;
   top: 0;
-  background-color: #fff;
+  background: #fff;
   border-bottom: 1px solid #e4e4e4;
   z-index: 10;
   &__open {
@@ -40,6 +47,18 @@
   &__close {
     width: calc(100% - 42px);
     left: 42px;
+  }
+  @include max {
+    &__open {
+      left: calc(50% - 590px);
+      max-width: calc(#{$pc-lg} - 150px);
+      margin: 0;
+    }
+    &__close {
+      left: calc(50% - 700px);
+      max-width: calc(#{$pc-lg} - 40px);
+      margin: 0;
+    }
   }
   @include tab {
     width: 100%;
@@ -56,6 +75,7 @@
   min-width: $pc-md;
   margin: 0 auto;
   padding: 0.7rem 0.35rem 0.35rem 1.9rem;
+  background: $defaultBackColor;
   &__open {
     padding-left: 190px;
   }

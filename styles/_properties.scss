@@ -20,11 +20,18 @@ $subColorSkin: #080807aa;
 $subColorGreen: #94d7c7aa;
 
 // レスポンシブを定義
+$max: 1481px;
 $pc-lg: 1480px;
 $pc-md: 1080px;
 $tab: 768px;
 $sp: 480px;
 $sp-min: 320px;
+
+@mixin max {
+  @media screen and (min-width: $max) {
+    @content;
+  }
+}
 
 @mixin pc-lg {
   @media screen and (max-width: $pc-lg) {
