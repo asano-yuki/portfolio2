@@ -5,7 +5,6 @@ import { useMediaQuery } from 'react-responsive'
 import Layout from 'components/layout'
 import Structure from 'components/atoms/Structure'
 import SkillOverview from '../components/molecules/SkillOverview'
-import CapacityList from '../components/atoms/CapacityList'
 import SkillTable from 'components/organisms/SkillTable'
 import SkillGroup from 'components/organisms/SkillGroup'
 import { fetchProfile, fetchSkill, ProfileProps, SkillProps } from 'utils/api'
@@ -30,7 +29,6 @@ const Skill: React.FC<Props> = ({
   const field      = profile.specialty_field.map(item => item.name)
   const technology = profile.specialty_technology.map(item => item.name)
   const work       = profile.specialty_work.map(item => item.name)
-  const capacity   = profile.capacity.map(item => item.name)
   // スキル情報の取得・加工
   const _skill = skill.map(item => {
     const { name, category, sub_category, year, level } = item
@@ -53,9 +51,6 @@ const Skill: React.FC<Props> = ({
           technology={technology}
           work={work}
         />
-      </Structure>
-      <Structure title='資格一覧' className='capacity'>
-        <CapacityList capacity={capacity} />
       </Structure>
       <Structure title='スキル一覧' className='skill-table'>
         { isSmartPhone ? <SkillGroup data={_skill} /> : <SkillTable data={_skill} /> }

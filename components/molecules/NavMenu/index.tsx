@@ -28,7 +28,7 @@ const NavMenu: React.FC<Props> = ({
           <a className={`
             ${styles.link}
             ${isVertical ? styles.link__vertical : ''}
-            ${ key === activeKey ? styles.link__on : ''}
+            ${key === activeKey ? styles.link_actived : ''}
           `}>
             <IconTitle {...item} title={text} icon={Icon} isVertical={isVertical} />
           </a>
@@ -36,7 +36,7 @@ const NavMenu: React.FC<Props> = ({
       </li>
     )
   })
-  return <ul className={`${styles.root} ${isVertical && styles.root__vertical}`}>{_items}</ul>
+  return <ul className={styles.root}>{_items}</ul>
 }
 
 export default NavMenu
