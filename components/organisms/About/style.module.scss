@@ -1,7 +1,0 @@
-@import "../../../styles/properties";
-
-.root {
-  @include sp {
-    border-top: 1px solid $borderColor;
-  }
-}
