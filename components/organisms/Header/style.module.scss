@@ -1,27 +1,45 @@
 @import "../../../styles/properties";
 
 .root {
-  &__open {
-    width: 150px;
-    @include tab {
-      width: 100%;
-    }
-  }
-  &__close {
-    width: 41.5px;
-    @include tab {
-      display: none;
-    }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: $pc-lg;
+  height: 100%;
+  padding: 0 40px;
+  margin: 0 auto;
+  @include tab {
+    padding: 0 0.3rem 0;
   }
 }
 
-.arrow_button {
+.title {
+  color: #fff;
+  font-family: $strongFont;
+  font-size: 0.18rem;
+  letter-spacing: 0.06rem;
+  white-space: nowrap;
+  @include sp {
+    font-size: 0.15rem;
+    letter-spacing: 0.04rem;
+  }
+}
+
+.list {
   display: flex;
-  justify-content: flex-end;
-  height: 37.5px;
-  padding: 0.1rem 0.1rem 0.075rem 0.1rem;
-  background: $mainColor;
+  align-items: center;
+}
+
+.nav {
   @include tab {
     display: none;
+  }
+}
+
+.service {
+  display: flex;
+  margin-left: 50px;
+  @include tab {
+    margin-left: 0;
   }
 }

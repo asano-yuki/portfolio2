@@ -1,7 +1,5 @@
 import React from 'react'
-import { faPencilAlt, faToolbox } from '@fortawesome/free-solid-svg-icons'
 import TitledText from '../../atoms/TitledText'
-import IconTitle from '../../atoms/IconTitle'
 import LangExplanation from '../../molecules/LangExplanation'
 
 import styles from './style.module.scss'
@@ -63,33 +61,10 @@ const About: React.FC = () => {
     }
   })
 
-  // IconTitleコンポーネントのパラメータ
-  const iconTitleParams = [
-    {
-      title : 'はじめに',
-      icon  : faPencilAlt
-    },
-    {
-      title : '当サイトで使用したスキル・ツール一覧',
-      icon  : faToolbox
-    },
-  ]
-
   return (
-    <div>
-      <section className={styles.intro}>
-        <IconTitle {...iconTitleParams[0]} />
-        <p className={styles.overview}>
-          自身のスキル証明として開発したポートフォリオサイトです。
-        </p>
-      </section>
-      <section className={styles.site}>
-        <div className={styles.icon_title}>
-          <IconTitle {...iconTitleParams[1]} />
-        </div>
-        <LangExplanation items={items} />
-      </section>
-    </div>
+    <section className={styles.root}>
+      <LangExplanation items={items} />
+    </section>
   )
 }
 

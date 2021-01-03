@@ -1,28 +1,7 @@
 @import "../../../styles/properties";
 
-.intro {
-  padding-top: 0.1rem;
-  text-align: center;
-  @include sp {
-    padding-bottom: 0.3rem;
-  }
-}
-
-.overview {
-  max-width: 710px;
-  margin: 0 auto;
-  padding-top: 0.1rem;
-  line-height: 0.22rem;
-  text-align: center;
-}
-
-.site {
-  padding-top: 0.4rem;
+.root {
   @include sp {
     border-top: 1px solid $borderColor;
   }
-}
-
-.icon_title {
-  padding-bottom: 0.25rem;
 }
