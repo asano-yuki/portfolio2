@@ -2,8 +2,6 @@ import React from 'react'
 import TitledText from '../../atoms/TitledText'
 import LangExplanation from '../../molecules/LangExplanation'
 
-import styles from './style.module.scss'
-
 /**
  * 使用スキル・ツールを構築
  */
@@ -62,7 +60,7 @@ const About: React.FC = () => {
   })
 
   return (
-    <section className={styles.root}>
+    <section>
       <LangExplanation items={items} />
     </section>
   )

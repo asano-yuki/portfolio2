@@ -42,7 +42,7 @@ const Home: React.FC<ProfileProps> = ({
       <Structure title='希望開発条件' className='dev-condetions'>
         <DevCondetions />
       </Structure>
-      <Structure title='当サイトで使用したスキル・ツール一覧' className='about'>
+      <Structure title='使用スキル・ツール一覧' className='about'>
         <About />
       </Structure>
     </Layout>
