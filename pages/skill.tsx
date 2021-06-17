@@ -54,7 +54,7 @@ const Skill: React.FC<Props> = ({
       </Structure>
       <Structure title='スキル一覧' className='skill-table'>
         { isSmartPhone ? <SkillGroup data={_skill} /> : <SkillTable data={_skill} /> }
-      </Structure>
+      </Structure> 
     </Layout>
   )
 }
